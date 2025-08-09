@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family Menu</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon-192.png" type="image/png">
+  <meta name="theme-color" content="#0ea5e9">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="app-title">🍽️ Family Menu</div>
+    <nav>
+      <button id="tab-week" class="tab active">Week</button>
+      <button id="tab-history" class="tab">History</button>
+      <button id="tab-settings" class="tab">Settings</button>
+    </nav>
+  </header>
+
+  <main id="view-week" class="view active">
+    <div class="week-controls">
+      <button id="prev-week">‹</button>
+      <div id="week-range"></div>
+      <button id="next-week">›</button>
+    </div>
+    <div id="week-grid" class="grid"></div>
+  </main>
+
+  <main id="view-history" class="view">
+    <div class="history-controls">
+      <label>Show last 
+        <select id="history-weeks">
+          <option value="4">4</option>
+          <option value="8">8</option>
+          <option value="12" selected>12</option>
+          <option value="26">26</option>
+          <option value="52">52</option>
+        </select> weeks
+      </label>
+    </div>
+    <div id="history-list" class="history-list"></div>
+  </main>
+
+  <main id="view-settings" class="view">
+    <h2>Checkbox Items</h2>
+    <div id="checkitems-list" class="list"></div>
+    <div class="flex">
+      <input id="new-checkitem" placeholder="e.g., Followed menu" />
+      <button id="add-checkitem">Add</button>
+    </div>
+
+    <h2>Daily Reminder Time</h2>
+    <div class="flex">
+      <input id="reminder-time" type="time" value="18:00" />
+      <button id="save-reminder">Save</button>
+    </div>
+    <p class="note">Push notifications require allowing notifications in your browser. This starter uses in-app reminders; push can be added later.</p>
+  </main>
+
+  <template id="day-card-template">
+    <div class="card">
+      <div class="card-header">
+        <div class="day-name"></div>
+        <div class="date-str"></div>
+      </div>
+      <label class="field">
+        <span>Dinner</span>
+        <input class="dinner" placeholder="What's for dinner?" />
+      </label>
+      <div class="checks"></div>
+      <label class="field">
+        <span>Rating</span>
+        <select class="rating">
+          <option value="">—</option>
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Notes</span>
+        <textarea class="notes" rows="2" placeholder="Notes..."></textarea>
+      </label>
+      <button class="save">Save</button>
+    </div>
+  </template>
+
+  <script type="module" src="firebaseConfig.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

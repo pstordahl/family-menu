@@ -1,0 +1,27 @@
+:root { --bg:#0b1220; --card:#111827; --muted:#6b7280; --brand:#0ea5e9; --text:#e5e7eb; --accent:#22c55e; }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #1f2937;position:sticky;top:0;background:rgba(11,18,32,.8);backdrop-filter: blur(6px)}
+.app-title{font-weight:700}
+nav .tab{background:#0f172a;color:#e5e7eb;border:1px solid #1f2937;margin-left:8px;padding:6px 10px;border-radius:10px;cursor:pointer}
+nav .tab.active{border-color:var(--brand);color:#fff}
+main.view{display:none;padding:16px;max-width:1000px;margin:0 auto}
+main.view.active{display:block}
+.week-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:12px}
+.week-controls button{background:#0f172a;border:1px solid #1f2937;color:#e5e7eb;border-radius:10px;padding:6px 10px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid #1f2937;border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.card-header{display:flex;align-items:baseline;justify-content:space-between;color:#cbd5e1}
+.field{display:flex;flex-direction:column;gap:6px}
+.field input,.field textarea,.field select{background:#0f172a;border:1px solid #374151;color:#e5e7eb;border-radius:10px;padding:8px}
+.checks{display:flex;flex-direction:column;gap:6px}
+.check-row{display:flex;align-items:center;gap:8px}
+.card .save{align-self:flex-end;background:var(--brand);border:0;color:#00111a;font-weight:700;padding:8px 12px;border-radius:10px;cursor:pointer}
+.list{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.list .item{display:flex;align-items:center;gap:8px}
+.list .item input{flex:1;background:#0f172a;border:1px solid #374151;color:#e5e7eb;border-radius:10px;padding:8px}
+.list .item button{background:#ef4444;border:0;color:#fff;border-radius:10px;padding:6px 10px;cursor:pointer}
+.flex{display:flex;gap:8px;align-items:center;margin:8px 0}
+.history-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.history-card{background:var(--card);border:1px solid #1f2937;border-radius:16px;padding:12px}
+.note{color:var(--muted);font-size:.9em}
